@@ -181,3 +181,43 @@ label #sidebar_btn:hover {
 .Itens-Side{
     margin-top: 13px;
 }
+.Card_IMG{
+    position: relative;
+    width: 280px;
+    height: 400px;
+    border: 1px solid white;
+    margin-left: 15px;
+    z-index: 1;
+    transition: 0.4s;
+    box-shadow: 2px 2px 2px black;
+}
+.cards_css{
+    margin-top: 110px;
+    margin-left: auto;
+}
+.Icon-Card{
+    position: relative;
+    z-index: 2;
+    position: absolute;
+    margin-top: 140px;
+    margin-left: 120px;
+    transition: 0.4s;
+}
+.Img_hover{
+    display: inline-block;
+}
+.Img_hover:hover .Card_IMG{
+    width: 288px;
+    height: 408px;
+    border-color: black;
+    box-shadow: 3px 3px 3px black;
+}
+.Img_hover:hover .Icon-Card{
+    width: 92px;
+}
+#card1{
+    position: relative;
+}
+#card1:hover{
+    background-color: rgb(0, 0, 0, 0.4);
+}

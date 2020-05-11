@@ -29,7 +29,12 @@
         </div>
         <div class="right_area">
             <?php
+            $_SESSION['login'] = null;
             session_start();
+            
+            if(empty($_SESSION['login'])){
+                $_SESSION['login'] == false;
+            }
             if ($_SESSION['login'] == true) {
                 echo "<a href=Controller/deslogar.php class='text-decoration-none logout_btn'>Logout</a>";
             } else {
@@ -60,7 +65,7 @@
                 echo "<img src=IMG/icon-20x20.png class=Cam_IMG >";
             } ?></label>
             <h4 class="textCSS"><?php
-                                echo $_SESSION['nome']; ?></h4>
+                               if($_SESSION['login'] == true){ echo $_SESSION['nome']; }?></h4>
         </center>
         <Div class="Itens-Side">
             <a href="#" class="text-decoration-none"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
@@ -77,6 +82,14 @@
             <i class="fas fa-bars" class="space" id="sidebar_btn"></i>
         </label>
         <input type="file" name="upload_image" id="upload_image" />
+        <center>
+            <div class="cards_css">
+            <div class="Img_hover"><a class="link-card" href="#"><img width="84px" class="Icon-Card" src="http://www.bioritmo.com.br/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaTRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f03e09659436c42bc504838952ac3a91c48b009e/Burn-hiit-zone-white-transparente.svg"><img class="Card_IMG" src="IMG/Card_1.png"></a></div>
+            <div class="Img_hover"><a class="link-card" href="#"><img width="84px" class="Icon-Card" src="http://www.bioritmo.com.br/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaXdCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3a10305235f86ce0c815c54ab9f6c6a6b174b194/Race-bootcamp-white-transparente.svg" alt=""><img class="Card_IMG" src="IMG/Cardt_2.png"></a></div>
+            <div class="Img_hover"><a class="link-card" href="#"><img width="84px" class="Icon-Card" src="http://www.bioritmo.com.br/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaThCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3745e3a8b40b6c5a28cf66c91d1d84b25ab2f961/Vidya-body-mind-white-transparente.svg"><img class="Card_IMG" src="IMG/Cardt_3.png"></a></div>
+
+            </div>
+        </center>
     </div>
     <script src="JS/jquery.js"></script>
     <script src="JS/validacoes.js"></script>
