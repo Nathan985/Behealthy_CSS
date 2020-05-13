@@ -207,13 +207,13 @@ label #sidebar_btn:hover {
     display: inline-block;
 }
 .Img_hover:hover .Card_IMG{
-    width: 288px;
-    height: 408px;
+    width: 292px;
+    height: 412px;
     border-color: black;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 2px 2px 2px black;
 }
 .Img_hover:hover .Icon-Card{
-    width: 92px;
+    width: 96px;
 }
 #card1{
     position: relative;
