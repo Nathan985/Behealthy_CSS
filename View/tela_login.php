@@ -127,7 +127,7 @@
     </div>
     
     <script src="../JS/AnimationForm.js"></script>
-    <script src="../jquery/jquery.js"></script>
+    <script src="../jquery/dist/jquery.js"></script>
     <script src="../JS/validacoes.js"></script>
 </body>
 

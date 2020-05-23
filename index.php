@@ -94,7 +94,6 @@
     <script src="JS/jquery.js"></script>
     <script src="JS/validacoes.js"></script>
 </body>
-
 </html>
 
 <div id="uploadimageModal" class="modal" role="dialog">

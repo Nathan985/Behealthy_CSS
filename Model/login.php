@@ -46,4 +46,6 @@
             die();
         }
             }
+    
+        header("Location: ../index.php");
     ?>

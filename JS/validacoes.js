@@ -283,5 +283,3 @@ $(function () {
         return false;
     });//function de dentro
 });//function de fora
-
-
