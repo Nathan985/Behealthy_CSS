@@ -139,11 +139,17 @@ label #sidebar_btn:hover {
 .content {
     margin-left: 250px;
     background-image: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url('../IMG/banner.jpg');
-    background-position: center;
     background-size: cover;
     height: 100vh;
     background-attachment: fixed;
     transition: 0.5s;
+}
+.backgo{
+    background-image: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url('../IMG/banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 
 #check:checked~.content {
@@ -174,6 +180,16 @@ label #sidebar_btn:hover {
     position: absolute;
     margin-top: 72px;
     right: 78px;
+}
+.Cam_IMG_pdt{
+    background-color: rgba(0, 0, 0, 0.89);
+    border-radius: 100%;
+    padding: 3px 3px 3px 3px;
+    z-index: 1;
+    cursor: pointer;
+    position: absolute;
+    margin-top: 122px;
+    left: 210px;
 }
 .Cam_IMG:hover{
     background-color: rgba(255, 255, 255, 0.705);
@@ -220,4 +236,166 @@ label #sidebar_btn:hover {
 }
 #card1:hover{
     background-color: rgb(0, 0, 0, 0.4);
+}
+.container-fun{
+
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 4rem;
+    width: 1200px;
+    height: 700px;
+    position: relative;
+    top: 10%;
+
+}
+.title{
+    text-align: center;
+    padding: 50px;
+
+}
+.container-form-fun{
+
+    width: 40%;
+    padding-left: 90px;
+    margin-left: 50px;
+
+}
+
+.container-form-fun input{
+
+    margin-top: 40px;
+
+}
+.btn-fun{
+    margin-top: 7rem;
+    width: 520px;
+    height: 43px;
+    padding: 10px 30px;
+    cursor: pointer;
+    /* display: block; */
+    background-image: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+
+}
+.btn-pdt{
+    width: 520px;
+    height: 43px;
+    padding: 10px 30px;
+    cursor: pointer;
+    /* display: block; */
+    background-image: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0;
+    outline: none;
+    margin-top: 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+
+}
+.input-select{
+    margin-top: 42px;
+
+}
+.alert-fun{
+    color: rgb(255, 25, 25);
+    font-size: 1.2rem;
+}
+.form-produto{
+
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 4rem;
+    width: 1200px;
+    height: 700px;
+    position: relative;
+    top: 10%;
+
+}
+.foto_pdt{
+    padding-top: 8px;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(214, 214, 214);
+    border-color: solid 2px black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.foto_pdt:hover{
+    background-color: rgb(194, 194, 194);
+}
+.invalid-area{
+    border-color: rgb(255, 25, 25);
+}
+.invalid-img{
+    border: solid 1px rgb(255, 25, 25);
+    border-color: rgb(255, 25, 25);
+}
+.invalid-img-cam{
+    border: solid 1px rgb(255, 25, 25);
+    border-color: rgb(255, 25, 25);
+    background-color: rgb(255, 25, 25);
+}
+.card{
+    width: 350px;
+    height: 470px;
+    margin-left: 12rem;
+    border-radius: 12px;
+    margin-bottom: 5rem;
+    box-shadow: 1px 1px 1px black;
+    background-color: rgb(211, 211, 211); 
+}
+.card i {
+    margin-right: 5px;
+}
+.title-card{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    /* background-color: rgb(209, 209, 209); */
+}
+.container-img{
+    margin-top: -7px;
+    background-color: white;
+}
+.img-card{
+    width: 210px;
+    height: 200px;
+}
+.desc-card{
+    margin-top: 15px;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+.button-card{
+    width: 90%;
+    padding: 8px;
+    margin-top: 18px;
+    background-color: rgb(29, 194, 29);
+    border: none;
+    box-shadow: 0.6px 0.6px 0.6px black;
+    font-size: 20px;
+    color: black;
+    border-radius: 7px;
+}
+.back{
+    background-image: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)), url('../IMG/banner.jpg');
+    position: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#cards-itens{
+    margin-top: 15rem;
 }

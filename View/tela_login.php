@@ -77,8 +77,9 @@
             <form action="../Controller/ValidCad.php" class="input-group-cad" method="post" id="Register">
                 <input type="text" class="input-field" placeholder="Name" name="User" id="Name">
                 <small class="alert d-none" id="CadName">Empty name field</small>
-                <input type="text" class="input-field" placeholder="E-mail" name="E-mail" id="Mail">
+                <input type="text" class="input-field" placeholder="E-mail" name="E-mail" id="Mail_Cad">
                 <small class="alert d-none" id="CadEmail">Empty email field</small>
+                <small class="alert d-none" id="CadEmailCadastrado">E-mail already registered</small>
                 <input type="password" class="input-field" placeholder="Password" name="senhacad" id="CadPass">
                 <small class="alert d-none" id="Cadsenha">Empty password field</small>
                 <input type="password" class="input-field" placeholder="Confirm Password" name="CPass" id="CadCpPass">
@@ -100,8 +101,10 @@
                 <span class="input-group-cad" id="Page">
                     <input type="text" class="input-field" placeholder="Username" name="Username" id="cadUsername">
                     <small class="alert d-none" id="CadNick">Invalid Username field</small>
+                    <small class="alert d-none" id="CadNickCadastrado">Username already registered</small>
                     <input type="text" class="input-field" placeholder="CPF" name="CPF" id="cadCPF">
                     <small class="alert d-none" id="CadCpf">Empty CPF field</small>
+                    <small class="alert d-none" id="CadCpfCadastrado">CPF already registered</small>
                     <input type="text" class="input-field" placeholder="Phone" name="Tell" id="Cadtell">
                     <small class="alert d-none" id="Cadtelefone">Empty phone field</small>
                     

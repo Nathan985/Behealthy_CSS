@@ -1,29 +1,15 @@
-
-<?php
-session_start();
-if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
-    if($_SESSION['cargo'] == "adm"){
-        header("Location: View/View_adm.php");
-    }
-    else if($_SESSION['cargo'] == "Func"){
-        header("Location: View/view_funcionario.php");
-    }
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela 1</title>
-    <script src="jquery/jquery.min.js"></script>
+    <!-- <script src="jquery/jquery.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="JS/croppie.js"></script>
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="CSS/croppie.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/croppie.css">
+    <link rel="stylesheet" href="../CSS/style.css"> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <style>
@@ -42,15 +28,12 @@ if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
         </div>
         <div class="right_area">
             <?php
-            
-
-            if (isset($_SESSION['login'])) {
-                $_SESSION['login'] == false;
-            }
+            //$_SESSION['login'] = null;
+            //session_start();
             if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
-                echo "<a href=Controller/deslogar.php class='text-decoration-none logout_btn'>Logout</a>";
+                echo "<a href=../Controller/deslogar.php class='text-decoration-none logout_btn'>Logout</a>";
             } else {
-                echo "<a href=view/tela_login.php class='logout_btn text-decoration-none'>Login</a>";
+                echo "<a href=tela_login.php class='logout_btn text-decoration-none'>Login</a>";
             }
 
 
@@ -63,18 +46,18 @@ if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
             if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
                 echo "<label for=upload_image >";
             }
-            if (!isset($_SESSION['login'])) {
+            if (empty($_SESSION['Img_url'])) {
                 $_SESSION['Img_url'] = "default_user.png";
             }
-            if (isset($_SESSION['login']) && $_SESSION['login'] != true) {
-                echo "<img id= Default src=upload/default_user.png class=profile_image>";
+            if (!isset($_SESSION['login']) or $_SESSION['login'] != true) {
+                echo "<img id= Default src=../upload/default_user.png class=profile_image>";
             } else {
                 $img_url = $_SESSION['Img_url'];
-                echo "<img id= AlterImg src=upload/" . $img_url . " class=profile_image>";
+                echo "<img id= AlterImg src=../upload/" . $img_url . " class=profile_image>";
             }
 
             if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
-                echo "<img src=IMG/icon-20x20.png class=Cam_IMG >";
+                echo "<img src=../IMG/icon-20x20.png class=Cam_IMG >";
             } ?></label>
             <h4 class="textCSS"><?php
                                 if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
@@ -82,11 +65,25 @@ if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
                                 } ?></h4>
         </center>
         <Div class="Itens-Side">
-            <a href="index.php" class="text-decoration-none"><i class="fas fa-home"></i><span>Inicio</span></a>
-            <a href="View/perfil.php" class="text-decoration-none"><i class="fas fa-user"></i><span>Meu Perfil</span></a>
-            <a href="View/compras.php" class="text-decoration-none"><i class="fas fa-shopping-cart"></i><span>Minhas Compras</span></a>
-            <a href="View/produtos_cliente.php" class="text-decoration-none"><i class="fas fa-shopping-bag"></i><span>Produtos</span></a>
-            <a href="View/info.php" class="text-decoration-none"><i class="fas fa-info-circle"></i><span>Informações</span></a>
+            <?php
+                    include 'Sidebar.php';
+                    $ObjSide = new Sidebar();
+                    $cargo;
+                    if(isset($_SESSION['cargo'])){
+                        $cargo = $_SESSION['cargo'];
+                    }
+                    else{
+                        $cargo = "cliente";
+                    }
+                    
+                    $ObjSide->ValidarAcesso($cargo);
+            // include 'Sidebar.php';
+            // $ObjSide = new Sidebar();
+            // if(empty($cargo)){
+            //     $cargo = "cliente";
+            // }
+            // $ObjSide->ValidarAcesso($cargo);
+            ?>
         </Div>
     </div>
 
@@ -95,19 +92,9 @@ if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
             <i class="fas fa-bars" class="space" id="sidebar_btn"></i>
         </label>
         <input type="file" name="upload_image" id="upload_image" />
-        <center>
-            <div class="cards_css">
-                <div class="Img_hover"><a class="link-card" href="#"><img width="84px" class="Icon-Card" src="http://www.bioritmo.com.br/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaTRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f03e09659436c42bc504838952ac3a91c48b009e/Burn-hiit-zone-white-transparente.svg"><img class="Card_IMG" src="IMG/Card_1.png"></a></div>
-                <div class="Img_hover"><a class="link-card" href="#"><img width="84px" class="Icon-Card" src="http://www.bioritmo.com.br/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaXdCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3a10305235f86ce0c815c54ab9f6c6a6b174b194/Race-bootcamp-white-transparente.svg" alt=""><img class="Card_IMG" src="IMG/Cardt_2.png"></a></div>
-                <div class="Img_hover"><a class="link-card" href="#"><img width="84px" class="Icon-Card" src="http://www.bioritmo.com.br/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaThCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3745e3a8b40b6c5a28cf66c91d1d84b25ab2f961/Vidya-body-mind-white-transparente.svg"><img class="Card_IMG" src="IMG/Cardt_3.png"></a></div>
-
-            </div>
-        </center>
-    </div>
-    <script src="JS/jquery.js"></script>
-    <script src="JS/validacoes.js"></script>
+        <!-- <script src="../JS/jquery.js"></script> -->
+        <!-- <script src="../JS/validacoes.js"></script> -->
 </body>
-
 </html>
 
 <div id="uploadimageModal" class="modal" role="dialog">
@@ -137,6 +124,11 @@ if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
     </div>
 </div>
 <script>
+    // function Reload() {
+    //     setTimeout(function() {
+    //         window.location.reload();
+    //     }, 500)
+    // }
 
     $(document).ready(function() {
 
@@ -173,7 +165,7 @@ if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
                 size: 'viewport'
             }).then(function(response) {
                 $.ajax({
-                    url: "upload.php",
+                    url: "../upload.php",
                     type: "POST",
                     data: {
                         "image": response
@@ -183,6 +175,7 @@ if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
                         $('#uploaded_image').html(data);
                         imgmod = document.querySelector('#AlterImg');
                         imgmod.src = Url_Image;
+
                     }
                 });
             })
@@ -190,21 +183,3 @@ if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
 
     });
 </script>
-
-<?php
-
-// include("Model/conexao.php");
-
-// if (isset($_FILES['Img'])) {
-
-//     $tipo = strtolower(substr($_FILES['Img']['name'], -4));
-//     $nome = md5(time()) . $tipo;
-//     $diretorio = "upload/";
-
-//     move_uploaded_file($_FILES['Img']['tmp_name'], $diretorio . $nome);
-
-//     $sql_code = $conn->prepare("INSERT INTO img_user (arquivo, data) values ('$nome', NOW())");
-//     // $mysqli ->query($sql_code);
-//     $sql_code->execute();
-// }
-?>

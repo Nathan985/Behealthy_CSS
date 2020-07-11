@@ -14,6 +14,8 @@
     $cpf = $_POST['CPF'];
     $telefone = $_POST['Tell'];
 
+    include "../Model/ValidarCampos.php";
+
     if(empty($user)){
         echo "ErroNome";
         die();
@@ -21,6 +23,13 @@
 
     if(empty($email)){
         echo "ErroEmail";
+        die();
+    }
+
+    $linha = ValidEmail($email);
+
+    if(!empty($linha['email'])){
+        echo "ErroEmailCadastrado";
         die();
     }
 
@@ -40,10 +49,24 @@
         echo "ErroNick";
         die();
     }
+    $linha = ValidNick($nickName);
+
+    if(!empty($linha['nickname'])){
+        echo "ErroNickCadastrado";
+        die();
+    }
     if(empty($cpf)){
         echo "ErroCPf";
         die();
     }
+
+    $linha = ValidCPF($cpf);
+
+    if(!empty($linha['cpf'])){
+        echo "ErroCpfCadastrado";
+        die();
+    }
+
     if(empty($telefone)){
         echo "ErroTell";
         die();

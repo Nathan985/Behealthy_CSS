@@ -1,5 +1,9 @@
 <?php 
 
+    if(empty($_POST)){
+        header("Location: ../View/tela_login.php");
+    }
+
     include 'conexao.php';
 
     $sql = $conn->prepare("SELECT * FROM tbl_User WHERE 
@@ -39,13 +43,15 @@
 
         switch($linha['cargo']){
             case "cliente":
-        echo "SucessoCliente";
-        die();
-        case "adm":
-            echo "SucessoADM";
-            die();
+                echo "SucessoCliente";
+                die();
+            case "adm":
+                echo "SucessoADM";
+                die();
+            case "Func":
+                echo "SucessoFunc";
+                die();
         }
             }
-    
-        header("Location: ../index.php");
+        // header("Location: ../index.php");
     ?>
