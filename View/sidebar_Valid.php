@@ -113,7 +113,7 @@
                         <br />
                         <br />
                         <br />
-                        <button class="btn btn-success crop_image">Crop & Upload Image</button>
+                        <button id="Img_pf_side" class="btn btn-success crop_image">Crop & Upload Image</button>
                     </div>
                 </div>
             </div>
@@ -159,7 +159,7 @@
             $('#uploadimageModal').modal('show');
         });
 
-        $('.crop_image').click(function(event) {
+        $('#Img_pf_side').click(function(event) {
             $image_crop.croppie('result', {
                 type: 'canvas',
                 size: 'viewport'

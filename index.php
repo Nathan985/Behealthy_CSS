@@ -17,7 +17,7 @@ if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela 1</title>
+    <title>BeHealthy</title>
     <script src="jquery/jquery.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="JS/croppie.js"></script>
@@ -83,10 +83,10 @@ if(isset($_SESSION['cargo']) && $_SESSION['cargo'] != "cliente"){
         </center>
         <Div class="Itens-Side">
             <a href="index.php" class="text-decoration-none"><i class="fas fa-home"></i><span>Inicio</span></a>
-            <a href="View/perfil.php" class="text-decoration-none"><i class="fas fa-user"></i><span>Meu Perfil</span></a>
-            <a href="View/compras.php" class="text-decoration-none"><i class="fas fa-shopping-cart"></i><span>Minhas Compras</span></a>
+            <a href="#" class="text-decoration-none"><i class="fas fa-user"></i><span>Meu Perfil</span></a>
+            <a href="#" class="text-decoration-none"><i class="fas fa-shopping-cart"></i><span>Minhas Compras</span></a>
             <a href="View/produtos_cliente.php" class="text-decoration-none"><i class="fas fa-shopping-bag"></i><span>Produtos</span></a>
-            <a href="View/info.php" class="text-decoration-none"><i class="fas fa-info-circle"></i><span>Informações</span></a>
+            <a href="#" class="text-decoration-none"><i class="fas fa-info-circle"></i><span>Informações</span></a>
         </Div>
     </div>
 
